@@ -1,0 +1,40 @@
+name: Debrify Actions
+author: Community
+actions:
+  - name: Open in Debrify
+    version: 1
+    minVersion: "0.7"
+    about: |
+      Opens magnet links directly in Debrify (unified debrid manager).
+      Debrify registers the magnet scheme and supports adding/streaming from Real-Debrid, Torbox, AllDebrid, Premiumize, PikPak, etc.
+      Works with both pure magnets and debridded results.
+    website: https://github.com/varunsalian/debrify
+    tags:
+      - name: Magnet
+        color: "#FF9500"
+      - name: Debrid
+        color: "#34C759"
+    requires:
+      - magnet
+    deeplink:
+      - os: iOS
+        scheme: "{link}"
+      - os: iOS
+        scheme: "debrify://{link}"
+
+  - name: Open in Debrify (Debrid)
+    version: 1
+    minVersion: "0.7"
+    about: |
+      Passes debrid streaming links to Debrify for playback / library management.
+    website: https://github.com/varunsalian/debrify
+    tags:
+      - name: Debrid
+        color: "#34C759"
+    requires:
+      - debrid
+    deeplink:
+      - os: iOS
+        scheme: "debrify://{link}"
+      - os: iOS
+        scheme: "{link}"
