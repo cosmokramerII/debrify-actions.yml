@@ -2,11 +2,11 @@ name: Debrify Actions
 author: Community
 actions:
   - name: Open in Debrify
-    version: 2
+    version: 3
     minVersion: "0.7"
     about: |
-      Opens magnet links in Debrify.
-      Uses the same pattern as the working Open in iTorrent action.
+      Tries several possible Debrify deeplink formats.
+      Test which one actually launches the app.
     website: https://github.com/varunsalian/debrify
     tags:
       - name: Magnet
@@ -15,4 +15,12 @@ actions:
       - magnet
     deeplink:
       - os: iOS
-        scheme: "{link}"
+        scheme: "{link}"                          # same as iTorrent (most correct)
+      - os: iOS
+        scheme: "debrify://{link}"
+      - os: iOS
+        scheme: "debrify://add?url={link}"
+      - os: iOS
+        scheme: "debrify://magnet?url={link}"
+      - os: iOS
+        scheme: "debrify://?magnet={link}"
