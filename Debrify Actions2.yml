@@ -1,0 +1,18 @@
+name: Debrify Actions
+author: Community
+actions:
+  - name: Open in Debrify
+    version: 2
+    minVersion: "0.7"
+    about: |
+      Opens magnet links in Debrify.
+      Uses the same pattern as Open in iTorrent.
+    website: https://github.com/varunsalian/debrify
+    tags:
+      - name: Magnet
+        color: "#FF9500"
+    requires:
+      - magnet
+    deeplink:
+      - os: iOS
+        scheme: "{link}"
